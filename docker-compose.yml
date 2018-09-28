@@ -1,0 +1,40 @@
+version: '3'
+volumes:
+  p4rb-mysql-data:
+  p4rb-data:
+services:
+  mysql:
+    container_name: p4rb-mysql
+    image: mysql:5.7
+    restart: always
+    environment:
+      - MYSQL_DATABASE=reviewboard
+      - MYSQL_USER=reviewboard
+      - MYSQL_PASSWORD=reviewboard
+      - MYSQL_ROOT_PASSWORD=reviewboard
+    volumes:
+      - p4rb-mysql-data:/var/lib/mysql
+  memcached:
+    container_name: p4rb-memcached
+    image: memcached:alpine
+    restart: always
+  reviewboard:
+    container_name: p4rb-reviewboard
+    image: mrmyp3uk/p4rb:latest
+    restart: always
+    depends_on:
+      - mysql
+      - memcached
+    links:
+      - mysql:db
+      - memcached
+    ports:
+      - "8000:8000"
+    environment:
+      - DB_USER=reviewboard
+      - DB_PASSWORD=reviewboard
+      - DB_ROOT_PASSWORD=reviewboard
+      - RB_ADMIN_PASSWORD=admin
+      - RB_ADMIN_EMAIL=admin@example.com
+    volumes:
+      - p4rb-data:/var/www
