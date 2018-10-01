@@ -1,0 +1,4 @@
+REVIEWBOARD_URL = '<Your Review Board site URL>'
+REPOSITORY = '<Your Perforce repository name (as configured in RB)>'
+REPOSITORY_TYPE = 'perforce'
+API_TOKEN = '<Your personal Review Board API token>'

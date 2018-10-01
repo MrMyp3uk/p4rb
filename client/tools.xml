@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--perforce-xml-version=1.0-->
+<CustomToolDefList varName="customtooldeflist">
+ <CustomToolDef>
+  <Definition>
+   <Name>Review Request</Name>
+   <Command>rbt.cmd</Command>
+   <Arguments>post -d --p4-client $c --p4-port $p %p</Arguments>
+   <Shortcut></Shortcut>
+  </Definition>
+  <Console>
+   <CloseOnExit>false</CloseOnExit>
+  </Console>
+  <AddToContext>true</AddToContext>
+ </CustomToolDef>
+</CustomToolDefList>
