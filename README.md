@@ -9,9 +9,9 @@ First you need to create and configure [Perforce repository](https://www.reviewb
 1. Install [RBTools](https://www.reviewboard.org/downloads/rbtools/)
 2. Install [GNU diff](http://gnuwin32.sourceforge.net/packages/diffutils.htm) and add path to its bin folder to _PATH_ environment variable
 3. Generate [API token](https://www.reviewboard.org/docs/manual/dev/users/settings/#api-tokens) to let RBTools utility safely access Review Board without asking for user credentials every time
-4. Add `.reviewboardrc` file (use the [template](../blob/master/client/.reviewboardrc)) to the workspace root
+4. Add `.reviewboardrc` file (use the [template](client/.reviewboardrc)) to the workspace root
 5. Add P4V Custom Tool:
-    - Download [tools.xml](../blob/master/client/tools.xml)
+    - Download [tools.xml](client/tools.xml)
     - Run P4V app
     - Open user's workspace
     - Open **Tools** -> **Manage Custom Tools...** menu
